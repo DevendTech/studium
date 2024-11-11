@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressão de Cupons - Hamburgueria</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="section1" id="section1">
+        <header class="header">
+
+            <ul>
+                <li>
+                    <a href="#section1">Inicio</a>
+                    <a href="#section4">Cardápio</a>
+                </li>
+            </ul>
+            <div class="logo">
+                <img width="120px" src="frontend/assets/logo.png" alt="">
+            </div>
+            <ul>
+                <li>
+                    <a href="#section3">Sobre Nós</a>
+                    <a href="">Franqueado</a>
+                </li>
+            </ul>
+            <div class="carrinho">
+                <button id="openModalBtn"><img src="frontend/assets/carrinho.png" alt=""></button>
+            </div>
+            <!-- Modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close">&times;</span>
+                    <h1>Loja de Pedidos</h1>
+
+                    <!-- Produtos disponíveis para adicionar ao carrinho -->
+                    <div class="container" id="product-list">
+                        <h2>Produtos</h2>
+                        
+                    </div>
+
+                    <!-- Carrinho de compras -->
+                    <div class="container cart" id="cart">
+                        <h2>Carrinho</h2>
+                        <div id="cartItems"></div>
+                        <button class="button" onclick="finalizeOrder()">Finalizar Pedido</button>
+                    </div>
+
+                    <!-- Área para o cliente acompanhar o status do pedido -->
+                    <div class="container order-status" id="order-status">
+                        <h2>Área do Cliente - Pedidos</h2>
+                        <div id="orderListClient"></div>
+                    </div>
+
+                    <!-- Área de login para proprietário -->
+                    <div class="container admin-login" id="admin-login">
+                        <h2>Área do Proprietário - Login</h2>
+                        <input type="password" id="adminPassword" placeholder="Senha do Proprietário">
+                        <button class="button" onclick="verifyAdmin()">Entrar</button>
+                    </div>
+
+                    <!-- Área do Proprietário para gerenciar status dos pedidos -->
+                    <div class="container admin-area" id="admin-area">
+                        <h2>Área do Proprietário - Gerenciar Pedidos</h2>
+                        <div id="orderListAdmin"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+    <section class="section2" id="section2">
+        <div class="sobrefundo">
+            <div class="fotosobre">
+                <div>
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                </div>
+                <div>
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                    <img width="270px" height="165px" src="frontend/assets/WhatsApp Image 2024-11-07 at 20.57.36.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section3" id="section3">
+        <div class="sobre">
+            <div class="textosobre">
+                <h1>Combinação perfeita</h1>
+                <p>Na Hamburgueria Studium, acreditamos que cada hambúrguer é uma obra de arte. Inspirada pelo conceito de “ars” – arte em latim –, nossa missão vai além de apenas servir refeições. Aqui, cada ingrediente é cuidadosamente selecionado, cada receita é pensada com paixão, e cada prato é uma experiência sensorial.
+                </p>
+            </div>
+
+            <div class="imgsobre">
+                <div class="fundoimg">
+                    <img class="hidden" width="380px" src="frontend/assets/fachada.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="section4" id="section4">
+        <h1>Cardápio</h1>
+        <div class="areahamburguer">
+            <!-- Cada hambúrguer com seu ID -->
+            <div class="hamburguer" data-id="1">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 1</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="2">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 2</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="3">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 3</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="4">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 4</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="5">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 5</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="6">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 6</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="7">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 7</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+            <div class="hamburguer" data-id="8">
+                <img src="frontend/assets/hamburguer.webp" alt="">
+                <div>
+                    <h1>Artesanal 8</h1>
+                    <p>Suculenta carne de vaca grelhada com queijo serra, cebolas caramelizadas e molho de pimentão, servido em pão de centeio. Acompanha batatas fritas temperadas com ervas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="modall" class="modal">
+        <div class="modal-content">
+            <span id="closeModall" class="closee">&times;</span>
+            <h2 id="modalTitle">Título do Hambúrguer</h2>
+            <p id="modalDescription">Descrição detalhada do hambúrguer.</p>
+            <div class="product">
+                <span>Produto 1 - R$10</span>
+                <button class="button" onclick="addToCart('Produto 1')">Adicionar ao Carrinho</button>
+            </div>
+
+        </div>
+    </div>
+    <section class="section5">
+
+        <h3>Galeria</h3>
+        <h1>Fotos</h1>
+        <div class="areafotos">
+            <div class="fotos">
+                <img width="400px" src="frontend/assets/hamburguer.webp" alt="">
+            </div>
+            <div class="fotos">
+                <img width="320px" src="frontend/assets/hamburguer.webp" alt="">
+
+            </div>
+            <div class="fotos   ">
+                <img width="350px" src="frontend/assets/hamburguer.webp" alt="">
+
+            </div>
+            <div class="fotos">
+                <img width="280px" src="frontend/assets/hamburguer.webp" alt="">
+
+            </div>
+            <div class="fotos">
+                <img width="380px" src="frontend/assets/hamburguer.webp" alt="">
+
+            </div>
+            <div class="fotos">
+                <img width="280px" src="frontend/assets/hamburguer.webp" alt="">
+
+            </div>
+
+        </div>
+    </section>
+    <section>
+
+
+    </section>
+
+    <!-- <section id="section">
+
+        <div id="cupomCliente" class="cupom cliente-cupom">
+            <img src="./frontend/assets/Logo.png" width="50px" height="80px" alt="">
+            <p>Pedido: Hambúrguer Especial</p>
+            <p>Quantidade: 2</p>
+            <p>Subtotal: R$20,00</p>
+            <p>Taxa de Serviço: R$2,00</p>
+            <p>Total: R$22,00</p>
+            <p>Método de Pagamento: Cartão</p>
+            <p>Obrigado pela preferência!</p>
+        </div>
+
+        <div id="cupomCozinha" class="cupom cozinha-cupom">
+            <h2>Cupom para a Cozinha</h2>
+            <p>Pedido: Hambúrguer Especial</p>
+            <p>Quantidade: 2</p>
+        </div>
+
+
+        <button class="botao-imprimir" onclick="imprimircupom('cupomCliente')">Imprimir Cupom do Cliente</button>
+        <button class="botao-imprimir" onclick="imprimircupom('cupomCozinha')">Imprimir Cupom da Cozinha</button>
+    </section> --> -->
+
+
+</body>
+
+</html>

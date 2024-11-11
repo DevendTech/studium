@@ -1,0 +1,418 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+header {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  padding-left: 34%;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 11vh;
+  transition: height 0.5s ease;
+  z-index: 2;
+}
+
+header.scrolledd {
+  height: 9vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+header .logo img {
+  display: flex;
+  margin-top: 100%;
+  transition: height 0.3s ease;
+}
+
+.logo img.scrolled {
+  width: 100px;
+}
+
+header ul li {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  align-items: center;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+header .carrinho button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 200%;
+  transition: transform 0.5s ease-in-out
+}
+
+header .carrinho button img {
+  width: 70px;
+
+}
+
+header .carrinho button:hover {
+  width: 70px;
+  transform: scale(1.1);
+}
+
+.section2 {
+  height: 100vh;
+  background: url(frontend/assets/fotofundo.jpg) center fixed;
+  background-size: 100vw 100vh;
+}
+
+.section2 .fotosobre {
+  display: flex;
+  flex-direction: column;
+  gap: 315px;
+}
+
+.section2 .fotosobre div {
+  display: flex;
+}
+
+.section2 .sobrefundo {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section3 .sobre {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 300px;
+  background: url(frontend/assets/fundo3.jpg) center no-repeat;
+  background-size: 100vw 100vh;
+}
+
+.section3 .sobre .textosobre {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section3 .sobre .fundoimg {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.section3 .sobre h1 {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 70px;
+  color: #81312F;
+}
+
+.section3 .sobre p {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  max-width: 400px;
+}
+
+.section3 .sobre img {
+  border-radius: 0px 50px 0px 50px;
+  margin-left: -30%;
+  height: 60vh;
+  z-index: 1;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateX(30%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 2s;
+}
+
+.hidden2 {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateX(0%);
+}
+
+.show2 {
+  opacity: 1;
+  filter: blur(0);
+  transform: translatey(-10%);
+  transition: all 2s;
+}
+
+
+.section4 {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  background: #81312F;
+}
+
+.section4 h1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+  color: white;
+}
+
+.section4 .areahamburguer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10%;
+  gap: 150px;
+}
+
+.section4 .areahamburguer .hamburguer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.section4 .areahamburguer .hamburguer div {
+  display: flex;
+  flex-direction: column;
+  align-items: last baseline;
+  gap: 10px;
+}
+
+.section4 .areahamburguer .hamburguer img {
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px rgba(240, 240, 240, 0.4);
+}
+
+.section4 .areahamburguer .hamburguer h1 {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  color: white;
+}
+
+.section4 .areahamburguer .hamburguer p {
+  max-width: 250px;
+  color: white;
+  font-size: 10px;
+}
+
+.modal {
+  display: none;
+  /* Esconde o modal por padrão */
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fundo escuro semi-transparente */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Botão de fechar */
+.closee {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section5{
+  display: flex;
+  flex-direction: column;
+  background: #153a33;
+  padding-bottom: 10%;
+}
+.section5 h1{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+  padding-bottom: 5%;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #81312F;
+}
+.section5 h3{
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  color: white;
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+}
+.section5 .areafotos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px; 
+}
+.section5 img{
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 100px  #81312F;
+  transition: transform 0.5s ease-in-out
+}
+.section5 img:hover{
+  transform: scale(1.1);
+}
+
+/* 
+.cupom {
+  width: 300px;
+  border: 1px dashed black;
+  margin: 10px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.cupom h2 {
+  text-align: center;
+}
+
+.cliente-cupom {
+  background-color: #f8f8ff;
+}
+
+.cozinha-cupom {
+  background-color: #f4f4e4;
+}
+
+.botao-imprimir {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+} */
+
+.container {
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.cart,
+.order-status,
+.admin-area {
+  margin-top: 20px;
+}
+
+.order {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.order-status select {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.admin-area {
+  display: none;
+}
