@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/areaProp.css">
+    <title>Área do Proprietário</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('pedido')">Pedido</button>
+            <button class="tab-btn" onclick="showTab('preparo')">Preparo</button>
+            <button class="tab-btn" onclick="showTab('entrega')">Entrega</button>
+            <button class="tab-btn" onclick="showTab('entregue')">Entregue</button>
+            <button class="tab-btn" onclick="showTab('cancelado')">Cancelado</button>
+        </div>
+
+        <div class="tab-content" id="pedido">
+            <div class="card" id="pedido-001">
+                <h3>Pedido #001</h3>
+                <p><strong>Telefone:</strong> (11) 1234-5678</p>
+                <p><strong>Nome:</strong> João Silva</p>
+                <p><strong>Endereço:</strong> Rua das Flores, 123</p>
+                <p><strong>Pedido:</strong> X-Burger</p>
+                <p><strong>Valor:</strong> R$ 25,00</p>
+                <button class="action-btn" onclick="moveTo('preparo', 'Pedido #001')">Aceitar</button>
+                <button class="cancel-btn" onclick="moveTo('cancelado', 'Pedido #001')">Cancelar</button>
+                <button class="print-btn" onclick="printOrder('Pedido #001', '(11) 1234-5678', 'João Silva', 'Rua das Flores, 123', 'X-Burger', 'R$ 25,00')">Imprimir</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="preparo" style="display: none;"></div>
+        <div class="tab-content" id="entrega" style="display: none;"></div>
+        <div class="tab-content" id="entregue" style="display: none;"></div>
+        <div class="tab-content" id="cancelado" style="display: none;"></div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="../scripts/areaProp.js"></script>
+</body>
+</html>
